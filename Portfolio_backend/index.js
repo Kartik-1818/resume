@@ -4,7 +4,7 @@ const connectDB = require('./db');
 const contactRoutes = require("./contactrouters/rou"); 
 const cors = require("cors");
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 // Connect to MongoDB
