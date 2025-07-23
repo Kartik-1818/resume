@@ -1,106 +1,155 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsapp,
+  FaGithub,
+  FaBars,
+  FaTimes,
+} from 'react-icons/fa';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const linkClass =
-    'px-3 py-2 hover:text-yellow-400 transition-colors duration-200';
+    'px-4 py-2 text-white hover:text-yellow-400 font-medium transition duration-200';
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/About' },
+    { name: 'Projects', path: '/Projects' },
+    { name: 'Skills & Education', path: '/skillsEdu' },
+    { name: 'Contact', path: '/Contact' },
+  ];
 
   return (
-    <nav className="bg-[#102E50] text-white p-4 flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-8 text-lg">
+    <nav className="bg-[#102E50] text-white sticky top-0 z-50 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
-      {/* Logo / Branding */}
-      <div className="flex justify-between w-full md:w-auto items-center">
-        <div className="text-2xl font-semibold font-cursive">Kartik Jhamb</div>
-        <button 
-          className="md:hidden p-2 text-2xl" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        {/* Logo */}
+        <div className="text-2xl font-bold font-cursive tracking-wide">
+          Kartik Jhamb
+        </div>
+
+        {/* Mobile menu icon */}
+        <div className="md:hidden">
+          <button
+            className="text-2xl focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map(({ name, path }) => (
+            <NavLink
+              key={name}
+              to={path}
+              className={({ isActive }) =>
+                isActive
+                  ? `${linkClass} text-yellow-400 font-semibold`
+                  : linkClass
+              }
+            >
+              {name}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Social Icons (Desktop) */}
+        <div className="hidden md:flex items-center gap-3 text-xl pr-2">
+          <a
+            href="https://www.linkedin.com/in/kartik-jhamb-b68a96326"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://www.instagram.com/kartikj_1718"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-400"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://wa.me/918209552235"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-400"
+          >
+            <FaWhatsapp />
+          </a>
+          <a
+            href="https://github.com/Kartik-1818"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300"
+          >
+            <FaGithub />
+          </a>
+        </div>
       </div>
 
-      {/* Main Nav Links */}
-      <div className={`flex flex-col md:flex-row md:justify-center gap-4 md:gap-8 transition-all duration-300 md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? `${linkClass} text-yellow-400 font-semibold` : linkClass
-          }
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/About"
-          className={({ isActive }) =>
-            isActive ? `${linkClass} text-yellow-400 font-semibold` : linkClass
-          }
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/Projects"
-          className={({ isActive }) =>
-            isActive ? `${linkClass} text-yellow-400 font-semibold` : linkClass
-          }
-        >
-          Projects
-        </NavLink>
-        <NavLink
-          to="/skillsEdu"
-          className={({ isActive }) =>
-            isActive ? `${linkClass} text-yellow-400 font-semibold` : linkClass
-          }
-        >
-          Skills & Education
-        </NavLink>
-        <NavLink
-          to="/Contact"
-          className={({ isActive }) =>
-            isActive ? `${linkClass} text-yellow-400 font-semibold` : linkClass
-          }
-        >
-          Contact
-        </NavLink>
-      </div>
+      {/* Mobile dropdown menu */}
+      {isMenuOpen && (
+        <div className="md:hidden px-4 pb-4 flex flex-col gap-4 animate-slideDown">
+          {navLinks.map(({ name, path }) => (
+            <NavLink
+              key={name}
+              to={path}
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive
+                  ? `${linkClass} text-yellow-400 font-semibold`
+                  : linkClass
+              }
+            >
+              {name}
+            </NavLink>
+          ))}
 
-      {/* Social Icons */}
-      <div className="flex gap-2 text-xl pr-4">
-        <a
-          href="https://www.linkedin.com/in/kartik-jhamb-b68a96326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://www.instagram.com/kartikj_1718?igsh=MWdycjV3dG9laWh6eQ=="
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-pink-400"
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://wa.me/918209552235"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-green-400"
-        >
-          <FaWhatsapp />
-        </a>
-        <a
-          href="https://github.com/Kartik-1818"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-400"
-        >
-          <FaGithub />
-        </a>
-      </div>
+          <div className="flex gap-4 text-2xl mt-2 justify-center">
+            <a
+              href="https://www.linkedin.com/in/kartik-jhamb-b68a96326"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://www.instagram.com/kartikj_1718"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://wa.me/918209552235"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://github.com/Kartik-1818"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300"
+            >
+              <FaGithub />
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
