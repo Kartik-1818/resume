@@ -16,6 +16,10 @@ const routelist = createBrowserRouter([
       <div>
         <Navbar />
         <Home />
+        <About/>
+        <Projects/>
+        <SkillsEducation/>
+        <Contact/>
       </div>
     ),
   },
