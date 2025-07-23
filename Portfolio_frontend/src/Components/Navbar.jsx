@@ -24,7 +24,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[#102E50] text-white sticky top-0 z-50 shadow-md">
+    <nav className="bg-gradient-to-br from-[#c8ffaa] via-[#d9ffe6] to-[#f0fff9] text-black sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
         {/* Logo */}
