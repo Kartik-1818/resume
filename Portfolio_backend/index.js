@@ -13,7 +13,7 @@ connectDB();
 // Middleware to parse JSON
 app.use(express.json());
 app.use(cors({
-  origin : "https://resume-qn89.vercel.app/"
+  origin : ["https://resume-qn89.vercel.app/" , "https://resume-qn89.vercel.app/" ]
 }));
 // Routes
 app.use("/api", contactRoutes);
