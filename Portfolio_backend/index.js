@@ -13,7 +13,11 @@ connectDB();
 // Middleware to parse JSON
 app.use(express.json());
 app.use(cors({
-  origin : ["https://resume-qn89.vercel.app/" , "https://resume-qn89.vercel.app/" , "resume-lime-tau.vercel.app" ]
+  origin: [
+  "https://resume-qn89.vercel.app",
+  "https://resume-lime-tau.vercel.app"
+]
+
 }));
 // Routes
 app.use("/api", contactRoutes);
@@ -26,5 +30,5 @@ app.get('/', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
