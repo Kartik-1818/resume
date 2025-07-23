@@ -3,7 +3,7 @@ import image from '../assets/image.jpeg';
 
 const Home = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center bg-[#d3dce7] px-6 py-10 sm:flex-row sm:gap-10">
+        <section className="min-h-screen flex flex-col justify-center items-center bg-[#c8ffaa] px-6 py-10 sm:flex-row sm:gap-10">
 
             {/* Left image */}
             <div className="flex-shrink-0 transform hover:scale-110 transition-transform duration-300 ease-in-out mb-8 sm:mb-0">
