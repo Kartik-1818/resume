@@ -1,5 +1,5 @@
 import React from "react";
-import video from "../assets/video.mp4"
+import video from "../assets/video.mp4";
 
 const Projects = () => {
   const projects = [
@@ -8,31 +8,31 @@ const Projects = () => {
       description:
         "A secure and modern password manager web application built using React and Node.js. PassVault allows users to register, log in, store passwords securely, and manage credentials with ease. Features include encryption, copy-to-clipboard, and intuitive category-wise vault UI – all deployed with seamless frontend-backend integration.",
       tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-      liveLink : "https://passvault-pi.vercel.app/",
-      repoLink  :"https://github.com/Kartik-1818/passvault.git"
+      liveLink: "https://passvault-pi.vercel.app/",
+      repoLink: "https://github.com/Kartik-1818/passvault.git",
     },
     {
       title: "JagdambaStore",
       description:
         "A full-featured stationery eCommerce platform developed for Jagdamba Store. It includes a user-facing shopping experience with categories, product pages, and a cart, along with an admin dashboard to manage products, users, and newsletter subscribers. Built with the MERN stack and responsive for all devices.",
       tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-      liveLink : "https://jagdamba-store.vercel.app/",
-      repoLink  : "https://github.com/Kartik-1818/Jagdamba_Store.git"
+      liveLink: "https://jagdamba-store.vercel.app/",
+      repoLink: "https://github.com/Kartik-1818/Jagdamba_Store.git",
     },
     {
       title: "PasteApp",
       description:
         "Paste App is a lightweight, modern web application that allows users to create, update, manage, and share text snippets (pastes) in real-time. Designed with React, Redux Toolkit, and Tailwind CSS, it offers a clean interface with features similar to Pastebin – but entirely offline/local-storage based.",
       tech: ["React", "Redux Toolkit", "TailwindCSS"],
-      liveLink : "https://paste-pad.vercel.app",
-      repoLink : "https://github.com/Kartik-1818/Paste_App.git"
+      liveLink: "https://paste-pad.vercel.app",
+      repoLink: "https://github.com/Kartik-1818/Paste_App.git",
     },
     {
       title: "Ultrasonic Rover",
       description:
         "An Arduino-based smart car that combines manual Bluetooth control with autonomous obstacle avoidance. Controlled via an Android app (using HC-05 module), it uses an ultrasonic sensor mounted on a servo to detect and reroute around obstacles in real time. Built with an L293D motor driver, it seamlessly switches between user commands and autonomous navigation.",
       tech: ["Arduino", "HC-05", "UNO", "Sensors"],
-      liveLink : {video},
+      liveLink: { video },
     },
   ];
 
@@ -64,22 +64,22 @@ const Projects = () => {
                 ))}
               </div>
               {/* [Optional links] */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 mt-4">
                 <a
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-indigo-600 hover:underline"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
                 >
-                  Live Demo
+                  <span>🔗 Live Demo</span>
                 </a>
                 <a
                   href={project.repoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:underline"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
                 >
-                  GitHub Repo
+                  <span>📁 GitHub Repo</span>
                 </a>
               </div>
             </div>
