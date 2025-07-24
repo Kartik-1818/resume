@@ -1,13 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaAward } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaAward } from "react-icons/fa";
 
 const certificates = [
   {
     title: "Full Stack Web Development",
     org: "Tech-Kriti IIT-Kanpur",
     date: "June - July 2024",
-    link : "/certificates/internship.pdf"
+    link: "/certificates/internship.pdf",
   },
   {
     title: "Course Completion Certificate - MERN Stack Developer",
@@ -63,15 +63,20 @@ const Certificates = () => {
             >
               {/* Left Preview */}
               <div className="w-24 h-32 flex-shrink-0 mr-4 rounded overflow-hidden border shadow-sm">
-                {cert.link.endsWith(".pdf") ? (
+                {cert.link && cert.link.endsWith(".pdf") ? (
                   <iframe
-                    src={cert.link}
+                    src={`${cert.link}#page=1&zoom=100`}
                     title={cert.title}
-                    className="w-full h-full scale-125 transform"
+                    className="w-full h-full rounded-sm"
+                    style={{
+                      zoom: 0.45,
+                      transformOrigin: "top left",
+                      pointerEvents: "none",
+                    }}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-xs text-gray-500 bg-gray-100">
-                    External Link
+                    {cert.link ? "External Link" : "No Preview"}
                   </div>
                 )}
               </div>
