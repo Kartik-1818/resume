@@ -33,6 +33,7 @@ const Projects = () => {
         "An Arduino-based smart car that combines manual Bluetooth control with autonomous obstacle avoidance. Controlled via an Android app (using HC-05 module), it uses an ultrasonic sensor mounted on a servo to detect and reroute around obstacles in real time. Built with an L293D motor driver, it seamlessly switches between user commands and autonomous navigation.",
       tech: ["Arduino", "HC-05", "UNO", "Sensors"],
       liveLink: { video },
+      videoPreview: video,
     },
   ];
 
@@ -65,22 +66,26 @@ const Projects = () => {
               </div>
               {/* [Optional links] */}
               <div className="flex gap-4 mt-4">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
-                >
-                  <span>🔗 Live Demo</span>
-                </a>
-                <a
-                  href={project.repoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
-                >
-                  <span>📁 GitHub Repo</span>
-                </a>
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
+                  >
+                    <span>🔗 Live Demo</span>
+                  </a>
+                )}
+                {project.repoLink && (
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
+                  >
+                    <span>📁 GitHub Repo</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
