@@ -7,7 +7,7 @@ import Login from "./Pages/Login";
 import About from "./Pages/About";
 import Navbar from "./Components/Navbar";
 import SkillsEducation from "./Pages/skillsEdu";
-import Certificates from './Pages/Certificates';
+import Certificates from './Pages/certificate';
 
 const routelist = createBrowserRouter([
   {
