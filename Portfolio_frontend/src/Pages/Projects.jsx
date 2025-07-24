@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "PassVault",
       description:
-        "A secure and modern password manager web application built using React and Node.js. PassVault allows users to register, log in, store passwords securely, and manage credentials with ease. Features include encryption, copy-to-clipboard, and intuitive category-wise vault UI – all deployed with seamless frontend-backend integration.",
+        "A secure and modern password manager web application built using React and Node.js...",
       tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
       liveLink: "https://passvault-pi.vercel.app/",
       repoLink: "https://github.com/Kartik-1818/passvault.git",
@@ -14,7 +14,7 @@ const Projects = () => {
     {
       title: "JagdambaStore",
       description:
-        "A full-featured stationery eCommerce platform developed for Jagdamba Store. It includes a user-facing shopping experience with categories, product pages, and a cart, along with an admin dashboard to manage products, users, and newsletter subscribers. Built with the MERN stack and responsive for all devices.",
+        "A full-featured stationery eCommerce platform developed for Jagdamba Store...",
       tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
       liveLink: "https://jagdamba-store.vercel.app/",
       repoLink: "https://github.com/Kartik-1818/Jagdamba_Store.git",
@@ -22,7 +22,7 @@ const Projects = () => {
     {
       title: "PasteApp",
       description:
-        "Paste App is a lightweight, modern web application that allows users to create, update, manage, and share text snippets (pastes) in real-time. Designed with React, Redux Toolkit, and Tailwind CSS, it offers a clean interface with features similar to Pastebin – but entirely offline/local-storage based.",
+        "Paste App is a lightweight, modern web application for creating and sharing pastes...",
       tech: ["React", "Redux Toolkit", "TailwindCSS"],
       liveLink: "https://paste-pad.vercel.app",
       repoLink: "https://github.com/Kartik-1818/Paste_App.git",
@@ -30,9 +30,8 @@ const Projects = () => {
     {
       title: "Ultrasonic Rover",
       description:
-        "An Arduino-based smart car that combines manual Bluetooth control with autonomous obstacle avoidance. Controlled via an Android app (using HC-05 module), it uses an ultrasonic sensor mounted on a servo to detect and reroute around obstacles in real time. Built with an L293D motor driver, it seamlessly switches between user commands and autonomous navigation.",
+        "An Arduino-based smart car combining manual Bluetooth control with autonomous obstacle avoidance...",
       tech: ["Arduino", "HC-05", "UNO", "Sensors"],
-      liveLink: { video },
       videoPreview: video,
     },
   ];
@@ -48,12 +47,24 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition duration-300"
+              className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition duration-300 flex flex-col"
             >
+              {/* Show preview video if exists */}
+              {project.videoPreview && (
+                <div className="mb-4">
+                  <video
+                    src={project.videoPreview}
+                    controls
+                    className="w-full rounded-lg shadow-md"
+                  />
+                </div>
+              )}
+
               <h3 className="text-2xl sm:text-3xl font-semibold text-green-700 mb-2">
-                {project.title || "Untitled Project"}
+                {project.title}
               </h3>
               <p className="text-gray-700 mb-4">{project.description}</p>
+
               <div className="flex flex-wrap gap-2 text-sm sm:text-base mb-4">
                 {project.tech.map((tech, i) => (
                   <span
@@ -64,8 +75,8 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              {/* [Optional links] */}
-              <div className="flex gap-4 mt-4">
+
+              <div className="flex gap-4 mt-auto">
                 {project.liveLink && (
                   <a
                     href={project.liveLink}
@@ -73,7 +84,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
                   >
-                    <span>🔗 Live Demo</span>
+                    🔗 Live Demo
                   </a>
                 )}
                 {project.repoLink && (
@@ -83,7 +94,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
                   >
-                    <span>📁 GitHub Repo</span>
+                    📁 GitHub Repo
                   </a>
                 )}
               </div>
