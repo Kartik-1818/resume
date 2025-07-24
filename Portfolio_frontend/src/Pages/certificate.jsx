@@ -59,9 +59,9 @@ const Certificates = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
-              className="flex bg-white rounded-xl shadow-lg p-4 border border-gray-200 hover:shadow-xl transition duration-300"
+              className="relative flex bg-white rounded-xl shadow-lg p-4 border border-gray-200 hover:shadow-xl transition duration-300"
             >
-              {/* Right Info */}
+              {/* Certificate Text Info */}
               <div className="flex flex-col justify-center">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
                   {cert.title}
@@ -69,6 +69,13 @@ const Certificates = () => {
                 <p className="text-gray-600">{cert.org}</p>
                 <p className="text-sm text-gray-500">{cert.date}</p>
               </div>
+
+              {/* Bottom-right Tooltip */}
+              {cert.link && (
+                <div className="absolute bottom-2 right-3 text-[11px] text-blue-600 bg-blue-100 px-2 py-1 rounded-md shadow-sm">
+                  📄 Click to view certificate
+                </div>
+              )}
             </motion.a>
           ))}
         </div>
