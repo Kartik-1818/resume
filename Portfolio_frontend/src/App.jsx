@@ -18,6 +18,7 @@ const routelist = createBrowserRouter([
         <Home />
         <About />
         <Projects />
+        <Certificates/>
         <SkillsEducation />
         <Contact />
       </div>
@@ -33,6 +34,15 @@ const routelist = createBrowserRouter([
     ),
   },
   {
+    path: "/certificates",
+    element: (
+      <div>
+        <Navbar />
+        <Certificates />
+      </div>
+    ),
+  },
+  {
     path: "/About",
     element: (
       <div>
@@ -41,15 +51,6 @@ const routelist = createBrowserRouter([
       </div>
     ),
   },
-  // {
-  //   path: "/Login",
-  //   element: (
-  //     <div>
-  //       <Navbar />
-  //       <Login />
-  //     </div>
-  //   ),
-  // },
   {
     path: "/Contact",
     element: (
@@ -76,15 +77,6 @@ const routelist = createBrowserRouter([
         <h1 className="text-center text-red-500 text-3xl mt-10">
           404 - Page Not Found
         </h1>
-      </div>
-    ),
-  },
-  {
-    path: "/certificates",
-    element: (
-      <div>
-        <Navbar />
-        <Certificates />
       </div>
     ),
   },

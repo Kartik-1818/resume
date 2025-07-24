@@ -16,9 +16,9 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/About" },
     { name: "Projects", path: "/Projects" },
+    { name: "Certificates", path: "/certificates" },
     { name: "Skills & Education", path: "/skillsEdu" },
     { name: "Contact", path: "/Contact" },
-    { name: "Certificates", path: "/certificates" },
   ];
 
   const linkClass = `block px-4 py-2 text-gray-700 hover:text-yellow-500 transition font-medium`;
