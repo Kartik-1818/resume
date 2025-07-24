@@ -1,13 +1,13 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import './App.css'
-import Home from './Pages/Home';
-import Projects from './Pages/Projects';
-import Contact from './Pages/Contact';
-import Login from './Pages/Login';
-import About from './Pages/About';
-import Navbar from './Components/Navbar';
-import SkillsEducation from './Pages/skillsEdu';
-
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
+import Login from "./Pages/Login";
+import About from "./Pages/About";
+import Navbar from "./Components/Navbar";
+import SkillsEducation from "./Pages/skillsEdu";
+import Certificates from './Pages/Certificates';
 
 const routelist = createBrowserRouter([
   {
@@ -16,10 +16,10 @@ const routelist = createBrowserRouter([
       <div>
         <Navbar />
         <Home />
-        <About/>
-        <Projects/>
-        <SkillsEducation/>
-        <Contact/>
+        <About />
+        <Projects />
+        <SkillsEducation />
+        <Contact />
       </div>
     ),
   },
@@ -73,16 +73,25 @@ const routelist = createBrowserRouter([
     element: (
       <div>
         <Navbar />
-        <h1 className="text-center text-red-500 text-3xl mt-10">404 - Page Not Found</h1>
+        <h1 className="text-center text-red-500 text-3xl mt-10">
+          404 - Page Not Found
+        </h1>
+      </div>
+    ),
+  },
+  {
+    path: "/certificates",
+    element: (
+      <div>
+        <Navbar />
+        <Certificates />
       </div>
     ),
   },
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={routelist} />
-  );
+  return <RouterProvider router={routelist} />;
 }
 
 export default App;
