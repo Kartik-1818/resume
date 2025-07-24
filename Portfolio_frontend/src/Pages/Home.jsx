@@ -1,11 +1,11 @@
-import React from 'react';
-import image from '../assets/image.jpeg';
-import { motion } from 'framer-motion';
+import React from "react";
+import image from "../assets/image.jpeg";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-[#f4f4f4] via-[#e2e2e2] to-[#d0d0d0] px-6 py-20 flex flex-col sm:flex-row items-center justify-center gap-10">
-
       {/* Left Image */}
       <motion.div
         initial={{ scale: 0.9 }}
@@ -32,7 +32,11 @@ const Home = () => {
         </h1>
 
         <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
-          Hey there! I'm Kartik — an engineering student & full-stack developer who turns caffeine & code into clean, powerful web apps. I design seamless UIs in React, build robust backends with Node.js, and even tinker with Arduino & sensors. I’m your go-to hybrid of code & circuits.
+          Hey there! I'm Kartik — an engineering student & full-stack developer
+          who turns caffeine & code into clean, powerful web apps. I design
+          seamless UIs in React, build robust backends with Node.js, and even
+          tinker with Arduino & sensors. I’m your go-to hybrid of code &
+          circuits.
         </p>
 
         <h3 className="mt-6 text-xl sm:text-2xl font-semibold text-yellow-600">
@@ -40,15 +44,14 @@ const Home = () => {
         </h3>
 
         <div className="flex justify-center sm:justify-start mt-8">
-          <a
-            href="/Contact"
+          <Link
+            to="/Contact"
             className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300"
           >
             Contact Me
-          </a>
+          </Link>
         </div>
       </motion.div>
-
     </section>
   );
 };
