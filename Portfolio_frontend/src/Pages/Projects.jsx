@@ -1,4 +1,5 @@
 import React from "react";
+import video from "../assets/video.mp4"
 
 const Projects = () => {
   const projects = [
@@ -23,7 +24,7 @@ const Projects = () => {
       description:
         "Paste App is a lightweight, modern web application that allows users to create, update, manage, and share text snippets (pastes) in real-time. Designed with React, Redux Toolkit, and Tailwind CSS, it offers a clean interface with features similar to Pastebin – but entirely offline/local-storage based.",
       tech: ["React", "Redux Toolkit", "TailwindCSS"],
-      liveLink : "",
+      liveLink : "https://paste-pad.vercel.app",
       repoLink : "https://github.com/Kartik-1818/Paste_App.git"
     },
     {
@@ -31,7 +32,7 @@ const Projects = () => {
       description:
         "An Arduino-based smart car that combines manual Bluetooth control with autonomous obstacle avoidance. Controlled via an Android app (using HC-05 module), it uses an ultrasonic sensor mounted on a servo to detect and reroute around obstacles in real time. Built with an L293D motor driver, it seamlessly switches between user commands and autonomous navigation.",
       tech: ["Arduino", "HC-05", "UNO", "Sensors"],
-      liveLink : "",
+      liveLink : {video},
     },
   ];
 
