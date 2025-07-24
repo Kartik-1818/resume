@@ -66,25 +66,38 @@ const Projects = () => {
               </div>
               {/* [Optional links] */}
               <div className="flex gap-4 mt-4">
-                {project.liveLink && (
+                {project.videoPreview ? (
                   <a
-                    href={project.liveLink}
+                    href={project.videoPreview}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 shadow-sm"
                   >
-                    <span>🔗 Live Demo</span>
+                    🎥 Watch Demo
                   </a>
-                )}
-                {project.repoLink && (
-                  <a
-                    href={project.repoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
-                  >
-                    <span>📁 GitHub Repo</span>
-                  </a>
+                ) : (
+                  <>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-sm"
+                      >
+                        🔗 Live Demo
+                      </a>
+                    )}
+                    {project.repoLink && (
+                      <a
+                        href={project.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition-all duration-300 shadow-sm"
+                      >
+                        📁 GitHub Repo
+                      </a>
+                    )}
+                  </>
                 )}
               </div>
             </div>
