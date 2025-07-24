@@ -61,26 +61,6 @@ const Certificates = () => {
               whileHover={{ scale: 1.02 }}
               className="flex bg-white rounded-xl shadow-lg p-4 border border-gray-200 hover:shadow-xl transition duration-300"
             >
-              {/* Left Preview */}
-              <div className="w-24 h-32 flex-shrink-0 mr-4 rounded overflow-hidden border shadow-sm">
-                {cert.link && cert.link.endsWith(".pdf") ? (
-                  <iframe
-                    src={`${cert.link}#page=1&zoom=100`}
-                    title={cert.title}
-                    className="w-full h-full rounded-sm"
-                    style={{
-                      zoom: 0.45,
-                      transformOrigin: "top left",
-                      pointerEvents: "none",
-                    }}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-xs text-gray-500 bg-gray-100">
-                    {cert.link ? "External Link" : "No Preview"}
-                  </div>
-                )}
-              </div>
-
               {/* Right Info */}
               <div className="flex flex-col justify-center">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
