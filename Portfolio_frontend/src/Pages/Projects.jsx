@@ -61,8 +61,8 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              {/* Optional links */}
-              {/* <div className="flex gap-4">
+              {/* [Optional links] */}
+              <div className="flex gap-4">
                 <a
                   href={project.liveLink}
                   target="_blank"
@@ -79,7 +79,7 @@ const Projects = () => {
                 >
                   GitHub Repo
                 </a>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>
