@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaGraduationCap, FaWrench, FaUserGraduate } from "react-icons/fa";
+import { FaLaptopCode, FaGraduationCap, FaWrench } from "react-icons/fa";
 
 const SkillsEducation = () => {
   return (
@@ -16,12 +16,18 @@ const SkillsEducation = () => {
             <h2 className="text-2xl sm:text-3xl font-semibold">Skills</h2>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-gray-700 text-lg list-inside list-disc">
-            <li>Tech Enthusiast</li>
-            <li>Coder</li>
-            <li>Love Building Projects</li>
-            <li>Editor</li>
+            <li>MERN Stack Developer</li>
+            <li>React Developer</li>
+            <li>Full Stack Web Development</li>
+            <li>Node.js & Express.js</li>
+            <li>MongoDB & Mongoose</li>
+            <li>TailwindCSS & Responsive UI</li>
             <li>Problem Solver</li>
+            <li>Version Control (Git/GitHub)</li>
+            <li>REST APIs & JSON</li>
             <li>Fast Learner</li>
+            <li>Tech Enthusiast</li>
+            <li>Love Building Projects</li>
           </ul>
         </section>
 

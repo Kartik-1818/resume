@@ -1,21 +1,35 @@
-export default function Projects() {
+import React from "react";
+
+const Projects = () => {
   const projects = [
+    {
+      title: "PassVault",
+      description:
+        "A secure and modern password manager web application built using React and Node.js. PassVault allows users to register, log in, store passwords securely, and manage credentials with ease. Features include encryption, copy-to-clipboard, and intuitive category-wise vault UI – all deployed with seamless frontend-backend integration.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    },
+    {
+      title: "JagdambaStore",
+      description:
+        "A full-featured stationery eCommerce platform developed for Jagdamba Store. It includes a user-facing shopping experience with categories, product pages, and a cart, along with an admin dashboard to manage products, users, and newsletter subscribers. Built with the MERN stack and responsive for all devices.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    },
     {
       title: "PasteApp",
       description:
         "Paste App is a lightweight, modern web application that allows users to create, update, manage, and share text snippets (pastes) in real-time. Designed with React, Redux Toolkit, and Tailwind CSS, it offers a clean interface with features similar to Pastebin – but entirely offline/local-storage based.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
+      tech: ["React", "Redux Toolkit", "TailwindCSS"],
     },
     {
       title: "Ultrasonic Rover",
       description:
         "An Arduino-based smart car that combines manual Bluetooth control with autonomous obstacle avoidance. Controlled via an Android app (using HC-05 module), it uses an ultrasonic sensor mounted on a servo to detect and reroute around obstacles in real time. Built with an L293D motor driver, it seamlessly switches between user commands and autonomous navigation.",
-      tech: ["React", "Arduino", "Express", "MongoDB"],
+      tech: ["Arduino", "HC-05", "React", "Express", "MongoDB"],
     },
     {
       title: "Snippet Manager",
       description:
-        "A personal snippet manager where developers can save, search, and share useful code snippets with syntax highlighting.",
+        "A personal snippet manager where developers can save, search, and share useful code snippets with syntax highlighting. Features include tagging, filtering, and localStorage-based persistence for offline-first usage.",
       tech: ["React", "Node", "MongoDB"],
     },
   ];
@@ -27,7 +41,6 @@ export default function Projects() {
           My Projects
         </h2>
 
-        {/* Grid Layout */}
         <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
@@ -48,7 +61,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              {/* Uncomment if live links are available */}
+              {/* Optional links */}
               {/* <div className="flex gap-4">
                 <a
                   href={project.liveLink}
@@ -73,4 +86,6 @@ export default function Projects() {
       </div>
     </section>
   );
-}
+};
+
+export default Projects;
